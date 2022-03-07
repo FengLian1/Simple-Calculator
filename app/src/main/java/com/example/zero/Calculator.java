@@ -5,10 +5,15 @@ import com.fathzer.soft.javaluator.DoubleEvaluator;
 
 public class Calculator {
 
-    String expression;
+    public String expression;
 
     public Calculator() {
             expression = "";
+    }
+
+    public String getExpression()
+    {
+        return expression;
     }
 
     public void append(String s)
@@ -16,6 +21,15 @@ public class Calculator {
         expression += s;
     }
 
+    public void empty()
+    {
+        expression = "";
+    }
+
+    public void delete()
+    {
+        expression = expression.substring(0, expression.length() - 1);
+    }
 
     public double getResult()
     {

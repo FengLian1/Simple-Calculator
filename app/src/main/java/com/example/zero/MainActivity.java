@@ -38,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
         buttonAdd = (Button) findViewById(R.id.buttonAdd);
         buttonSub = (Button) findViewById(R.id.buttonSub);
         buttonDivision = (Button) findViewById(R.id.buttonDivision);
+        buttonMul = (Button) findViewById(R.id.buttonMul);
+        buttonMod = (Button) findViewById(R.id.buttonMod);
+        buttonC = (Button) findViewById(R.id.buttonAC);
+        buttonEqual = (Button) findViewById(R.id.buttonEqual);
+        buttonDelete = (Button) findViewById(R.id.buttonDelete);
 
 
 
@@ -128,6 +133,72 @@ public class MainActivity extends AppCompatActivity {
                 m_calculator.append(".");
             }
         });
+
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                display.setText(display.getText() + "+");
+                m_calculator.append("+");
+            }
+        });
+
+        buttonSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                display.setText(display.getText() + "-");
+                m_calculator.append("-");
+            }
+        });
+
+        buttonDivision.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                display.setText(display.getText() + "/");
+                m_calculator.append("/");
+            }
+        });
+
+        buttonMul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                display.setText(display.getText() + "*");
+                m_calculator.append("*");
+            }
+        });
+
+        buttonMod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                display.setText(display.getText() + "/");
+                m_calculator.append("%");
+            }
+        });
+
+        buttonC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                m_calculator.empty();
+                display.setText(m_calculator.getExpression());
+            }
+        });
+
+        buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                m_calculator.delete();
+                display.setText(m_calculator.getExpression());
+            }
+        });
+
+        buttonEqual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double result = m_calculator.getResult();
+                display.setText(Double.toString(result));
+                //m_calculator.empty();
+            }
+        });
+
     }
 
 
