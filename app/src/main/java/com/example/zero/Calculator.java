@@ -31,11 +31,16 @@ public class Calculator {
         expression = expression.substring(0, expression.length() - 1);
     }
 
-    public double getResult()
+    public String getResult()
     {
         Double result = new DoubleEvaluator().evaluate(expression);
 
-        return result;
+        if (result % 1.0 != 0)
+            return String.format("%s", result);
+        else
+            return String.format("%.0f", result);
+
+
     }
 
 }

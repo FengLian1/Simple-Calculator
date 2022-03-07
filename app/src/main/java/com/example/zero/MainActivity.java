@@ -193,16 +193,13 @@ public class MainActivity extends AppCompatActivity {
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double result = m_calculator.getResult();
-                display.setText(Double.toString(result));
+                String result = m_calculator.getResult();
+                display.setText(result);
                 //m_calculator.empty();
             }
         });
 
     }
-
-
-
 }
 
 
